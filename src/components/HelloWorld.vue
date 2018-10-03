@@ -1,113 +1,119 @@
 <template>
-  <div class="hello">
-    <h1>{{ msg }}</h1>
-    <h2>Essential Links</h2>
+  <div id="todoApp">
+  <h2> {{message}} </h2>
+  <p>
+  New Tasks can be added below:
+  </p>
+  <form name="todo-form" method="post" action="" v-on:submit.prevent="addTask">
+    <input name="add-todo" type="text" v-model="addTodoInput" v-bind:class="{error: hasError}"/>
+    <button type="submit">Add</button>
+  </form>
+   <div class="todo-lists" v-if="lists.length"><br />
+    <h3>My Todo Tasks:</h3>
     <ul>
-      <li>
-        <a
-          href="https://vuejs.org"
-          target="_blank"
-        >
-          Core Docs
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://forum.vuejs.org"
-          target="_blank"
-        >
-          Forum
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://chat.vuejs.org"
-          target="_blank"
-        >
-          Community Chat
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://twitter.com/vuejs"
-          target="_blank"
-        >
-          Twitter
-        </a>
-      </li>
-      <br>
-      <li>
-        <a
-          href="http://vuejs-templates.github.io/webpack/"
-          target="_blank"
-        >
-          Docs for This Template
-        </a>
+      <li v-for="list in lists" :key="list.id">
+        <input type="checkbox" v-on:change="completeTask(list)" v-bind:checked="list.isComplete"/>
+        <del v-if="list.isComplete">
+        {{list.title}}
+        </del>
+         <span v-else class="title" contenteditable="true" v-on:keydown.enter="updateTask($event, list)" v-on:blur="updateTask($event, list)" v-bind:class="{completed: list.isComplete}">{{list.title}}</span>
       </li>
     </ul>
-    <h2>Ecosystem</h2>
-    <ul>
-      <li>
-        <a
-          href="http://router.vuejs.org/"
-          target="_blank"
-        >
-          vue-router
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vuex.vuejs.org/"
-          target="_blank"
-        >
-          vuex
-        </a>
-      </li>
-      <li>
-        <a
-          href="http://vue-loader.vuejs.org/"
-          target="_blank"
-        >
-          vue-loader
-        </a>
-      </li>
-      <li>
-        <a
-          href="https://github.com/vuejs/awesome-vue"
-          target="_blank"
-        >
-          awesome-vue
-        </a>
-      </li>
-    </ul>
+  </div>
   </div>
 </template>
 
 <script>
-export default {
-  name: 'HelloWorld',
-  data () {
-    return {
-      msg: 'Welcome to my first Vue.js App'
+/* eslint-disable */
+var todoApp = new Vue({
+  el: '#todoApp',
+  data: {
+    message: 'Welcome to Todo App',
+    addTodoInput: '',
+    lists: [],
+    hasError: false
+  },
+  methods:{
+    addTask(){
+      
+      if(!this.addTodoInput){
+        this.hasError = true;
+        return;
+      }
+      
+      this.hasError = false;
+      
+      this.lists.push({
+        id:this.lists.length+1, 
+        title: this.addTodoInput, 
+        isComplete: false
+      });
+      
+      this.addTodoInput = '';
+    },
+    
+    updateTask(e, list){
+      e.preventDefault();
+      list.title = e.target.innerText;
+      e.target.blur();
+    },
+    
+    completeTask(list){
+      list.isComplete = !list.isComplete;
     }
+    
   }
-}
+});
+
+//generate dummy data for demo purpose
+todoApp.lists = [{
+      id: 1,
+      title: 'Hello Vue.JS',
+      isComplete: false
+    },
+    {
+      id: 2,
+      title: 'Learn JavaScript',
+      isComplete: false
+    },
+    {
+      id: 3,
+      title: 'Learn Vue',
+      isComplete: false
+    },
+    {
+      id: 4,
+      title: 'Play around in JSFiddle',
+      isComplete: true
+    }]
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-h1, h2 {
-  font-weight: normal;
+body {
+  background: #000;
+  ;
+  padding: 20px;
+  font-family: Helvetica;
 }
-ul {
-  list-style-type: none;
-  padding: 0;
+
+#todoApp {
+  background: #fff;
+  border-radius: 4px;
+  padding: 20px;
+  transition: all 0.2s;
 }
+
 li {
-  display: inline-block;
-  margin: 0 10px;
+  margin: 8px 0;
 }
-a {
-  color: #42b983;
+
+h2 {
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+del {
+  color: rgba(0, 0, 0, 0.3);
 }
 </style>
