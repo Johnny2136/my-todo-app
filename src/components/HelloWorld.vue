@@ -26,15 +26,16 @@
 <script>
 /* eslint-disable */
 export default {
-  name: 'HelloWorld'
-  props: {
+  name: 'HelloWorld',
+  data() {
+    return {
     message: 'Welcome to Todo App',
     addTodoInput: '',
     lists: [],
     hasError: false
-  },
+  }
   methods:{
-    addTask(){
+    addTask(); {
       
       if(!this.addTodoInput){
         this.hasError = true;
@@ -52,7 +53,7 @@ export default {
       this.addTodoInput = '';
     },
     
-    updateTask(e, list){
+    updateTask(e, list) {
       e.preventDefault();
       list.title = e.target.innerText;
       e.target.blur();
@@ -63,6 +64,7 @@ export default {
     }
     
   }
+}
 });
 
 //generate dummy data for demo purpose
