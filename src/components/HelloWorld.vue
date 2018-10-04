@@ -25,9 +25,9 @@
 
 <script>
 /* eslint-disable */
-var todoApp = new Vue({
-  el: '#todoApp',
-  data: {
+export default {
+  name: 'HelloWorld'
+  props: {
     message: 'Welcome to Todo App',
     addTodoInput: '',
     lists: [],
