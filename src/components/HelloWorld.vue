@@ -17,7 +17,8 @@
         <del v-if="list.isComplete">
         {{list.title}}
         </del>
-         <span v-else class="title" contenteditable="true" v-on:keydown.enter="updateTask($event, list)" v-on:blur="updateTask($event, list)" v-bind:class="{completed: list.isComplete}">{{list.title}}</span>
+         <span v-else class="title" contenteditable="true" v-on:keydown.enter="updateTask($event, list)"
+          v-on:blur="updateTask($event, list)" v-bind:class="{completed: list.isComplete}">{{list.title}}</span>
       </li>
     </ul>
   </div>
@@ -27,7 +28,7 @@
 <script>
 /* eslint-disable */
 export default {
-  name: 'HelloWorld',
+  name: 'todoApp',
   data() {
     return {
     message: 'Welcome to Todo App',
