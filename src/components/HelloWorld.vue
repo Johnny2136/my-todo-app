@@ -1,3 +1,4 @@
+/* eslint-disable */
 <template>
   <div id="todoApp">
   <h2> {{message}} </h2>
@@ -51,21 +52,21 @@ export default {
       });
       
       this.addTodoInput = '';
-    },
+    }
     
-    updateTask(e, list) {
+    updateTask(e, list); {
       e.preventDefault();
       list.title = e.target.innerText;
       e.target.blur();
-    },
+    }
     
-    completeTask(list){
+    completeTask(list); { 
       list.isComplete = !list.isComplete;
     }
     
   }
 }
-});
+};
 
 //generate dummy data for demo purpose
 todoApp.lists = [{
