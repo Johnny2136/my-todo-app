@@ -18,7 +18,9 @@
         {{list.title}}
         </del>
          <span v-else class="title" contenteditable="true" v-on:keydown.enter="updateTask($event, list)"
-          v-on:blur="updateTask($event, list)" v-bind:class="{completed: list.isComplete}">{{list.title}}</span>
+          v-on:blur="updateTask($event, list)" :class="{completed: list.isComplete}">
+          {{list.title}}
+          </span>
       </li>
     </ul>
   </div>
