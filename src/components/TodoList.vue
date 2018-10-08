@@ -134,7 +134,7 @@ export default {
 @import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css");
   .todo-input {
     font-family: "Comic Sans MS", cursive, sans-serif;
-    width: 80%;
+    width: 100%;
     padding: 10px 18px;
     font-size: 18px;
     margin-bottom: 16px;
@@ -199,14 +199,14 @@ export default {
     background-color: white;
     appearance: none;
     &:hover {
-      background: lightgreen;
+      background: lightblue;
     }
     &:focus {
       outline: none;
     }
   }
   .active {
-    background: lightgreen;
+    background: lightblue;
   }
   // CSS Transitions
   .fade-enter-active, .fade-leave-active {
