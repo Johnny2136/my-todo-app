@@ -133,7 +133,8 @@ export default {
 <style lang="scss">
 @import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css");
   .todo-input {
-    width: 100%;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    width: 80%;
     padding: 10px 18px;
     font-size: 18px;
     margin-bottom: 16px;
@@ -142,6 +143,7 @@ export default {
     }
   }
   .todo-item {
+    font-family: "Comic Sans MS", cursive, sans-serif;
     margin-bottom: 12px;
     display: flex;
     align-items: center;
@@ -181,6 +183,7 @@ export default {
     color: grey;
   }
   .extra-container {
+    font-family: "Comic Sans MS", cursive, sans-serif;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -190,6 +193,8 @@ export default {
     margin-bottom: 14px;
   }
   button {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    padding: 5px 35px;
     font-size: 14px;
     background-color: white;
     appearance: none;
