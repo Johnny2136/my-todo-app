@@ -25,7 +25,7 @@ export default {
   box-sizing: border-box;
 }
 body{
-  background-image: url("https://www.incomeactivator.com/images/freebg5.jpg");
+  background-image: url(./assets/vintage-red.jpg);
 }
 h2{
   font-family: "Comic Sans MS", cursive, sans-serif;
@@ -36,7 +36,7 @@ h2{
 .container {
   max-width: 600px;
   margin: 5px auto;
-  border: 25px solid rgb(122, 122, 126);
+  border: 25px solid rgb(218, 107, 107);
   border-radius: 50px;
     background-color: #fff;
     padding-top: 5px;
