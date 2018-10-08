@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # todo-vue
+=======
+# todo-app
+>>>>>>> beb142f81efcbaa429fbede7c0d0a601beed706c
 
 ## Project setup
 ```
@@ -23,4 +27,14 @@ npm run test
 ### Lints and fixes files
 ```
 npm run lint
+```
+
+### Run your end-to-end tests
+```
+npm run test:e2e
+```
+
+### Run your unit tests
+```
+npm run test:unit
 ```

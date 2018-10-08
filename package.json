@@ -1,23 +1,50 @@
 {
+<<<<<<< HEAD
   "name": "todo-vue",
+=======
+  "name": "todo-app",
+>>>>>>> beb142f81efcbaa429fbede7c0d0a601beed706c
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "test:e2e": "vue-cli-service test:e2e",
+    "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+<<<<<<< HEAD
     "node-sass": "^4.9.3",
     "sass-loader": "^7.1.0",
     "vue": "^2.5.17"
+=======
+    "register-service-worker": "^1.0.0",
+    "vue": "^2.5.17",
+    "vue-router": "^3.0.1"
+>>>>>>> beb142f81efcbaa429fbede7c0d0a601beed706c
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.4",
+    "@vue/cli-plugin-e2e-nightwatch": "^3.0.4",
     "@vue/cli-plugin-eslint": "^3.0.4",
+    "@vue/cli-plugin-pwa": "^3.0.4",
+    "@vue/cli-plugin-unit-jest": "^3.0.4",
     "@vue/cli-service": "^3.0.4",
+<<<<<<< HEAD
     "vue-cli-plugin-sass-resources-loader": "^1.0.0",
     "vue-cli-plugin-scss-base": "^0.1.9",
+=======
+    "@vue/eslint-config-prettier": "^3.0.4",
+    "@vue/test-utils": "^1.0.0-beta.20",
+    "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^23.0.1",
+    "jest-cucumber": "^1.0.11",
+    "jest-html-reporter": "^2.4.2",
+    "nightwatch-api": "^0.4.0",
+    "node-sass": "^4.9.0",
+    "sass-loader": "^7.0.1",
+>>>>>>> beb142f81efcbaa429fbede7c0d0a601beed706c
     "vue-template-compiler": "^2.5.17"
   }
 }
